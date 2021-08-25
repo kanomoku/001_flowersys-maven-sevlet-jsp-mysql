@@ -35,9 +35,15 @@ public class FlowerDaoImpl implements FlowerDao {
 			e.printStackTrace();
 		} finally {
 			try {
-				rs.close();
-				ps.close();
-				conn.close();
+				if (rs != null) {
+					rs.close();
+				}
+				if (rs != null) {
+					ps.close();
+				}
+				if (rs != null) {
+					conn.close();
+				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
